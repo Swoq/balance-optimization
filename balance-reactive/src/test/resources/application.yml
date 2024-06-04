@@ -1,0 +1,5 @@
+spring:
+  r2dbc:
+    url: ${R2DBC_DATABASE_URL:r2dbc:postgresql://localhost:5432/balance_db}
+    username: ${R2DBC_DATABASE_USERNAME:postgres}
+    password: ${R2DBC_DATABASE_PASSWORD:postgres}

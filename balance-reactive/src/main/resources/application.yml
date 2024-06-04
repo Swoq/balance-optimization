@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: balance-app
+server:
+  port: ${SERVER_PORT:8080}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  r2dbc:
+    url: ${POSTGRES_HOST:r2dbc:postgresql://localhost:5432/balance_db}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+

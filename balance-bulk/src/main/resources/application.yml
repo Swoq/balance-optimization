@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: balance-bulk
+  datasource:
+    url: ${POSTGRES_HOST:jdbc:postgresql://localhost:5432/balance_db}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 10
+      idle-timeout: 30000
+      connection-timeout: 20000
+      max-lifetime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 1000
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
